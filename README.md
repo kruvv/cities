@@ -1,5 +1,8 @@
 #Приложение показывающее погоду в вашем городе.
 
+API_KEY - необходимо получить на сайте https://openweathermap.org (регистрируемся и получаем в личном кабинете(занимает от 5 минут до 2-3 часов). Ключ указаный в этом проеекте у Вас может сработать, а может и нет, а личный точно работает.)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

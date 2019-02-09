@@ -25,7 +25,7 @@ if(city) {
   const api_url = await
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
   const data = await api_url.json();
-  //console.log(data); //Для начальной диагностики
+  console.log(data); //Для начальной диагностики
 
   var sunset = data.sys.sunset;
   var date = new Date();
@@ -54,17 +54,23 @@ if(city) {
 
   render() {
     return (
-      <div>
-      <Info />
-      <Form weatherMethod={this.gettingWeather} />
-      <Weather
-        temp={this.state.temp}
-        city={this.state.city}
-        country={this.state.country}
-        pressure={this.state.pressure}
-        sunset={this.state.sunset}
-        error={this.state.error}
-      />
+      <div className="wrapper">
+       <div className="main">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-5 info"><Info /></div>
+            <div className="col-sm-7 form"><Form weatherMethod={this.gettingWeather} />
+            <Weather
+              temp={this.state.temp}
+              city={this.state.city}
+              country={this.state.country}
+              pressure={this.state.pressure}
+              sunset={this.state.sunset}
+              error={this.state.error}
+            /></div>
+          </div>
+        </div>
+       </div>
       </div>
     );
   }
