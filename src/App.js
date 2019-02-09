@@ -38,9 +38,18 @@ if(city) {
     country: data.sys.country,
     pressure: data.main.pressure,
     sunset: sunset_date,
-    error: ""
+    error: undefined
       });
-    }
+    }else {
+      this.setState({
+        temp: undefined, //Температура
+        city: undefined, //Город
+        country: undefined, //Код страны
+        pressure: undefined, //Давление
+        sunset: undefined, //Заход солнца
+        error: "Введите название города"
+          });
+      }
   }
 
   render() {
